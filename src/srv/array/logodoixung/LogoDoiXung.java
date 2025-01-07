@@ -23,23 +23,26 @@ public class LogoDoiXung {
 				}
 			}
 
-			outer:
-			for (int i = 0; i < N / 2; i++) {
+			outer1:
+			for (int i = 0; i < N ; i++) {
 				for (int j = 0; j < N / 2; j++) {
 					if (arr[i][j] != arr[i][N - 1 - j]) {
 						ans = false;
-						break outer;
-					}
-					if (arr[i][j] != arr[N - 1 - i][j]) {
-						ans = false;
-						break outer;
-					}
-					if (arr[i][j] != 0) {
-						notZero = true;
+						break outer1;
 					}
 				}
 			}
-			System.out.println("#" + (tc + 1) + " " + (ans && notZero ? "YES" : "NO"));
+
+			outer2:
+			for (int i = 0; i < N / 2; i++) {
+				for (int j = 0; j < N; j++) {
+					if (arr[i][j] != arr[N - 1 - i][j]) {
+						ans = false;
+						break outer2;
+					}
+				}
+			}
+			System.out.println("#" + (tc + 1) + " " + (ans ? "YES" : "NO"));
 		}
 	}
 }
