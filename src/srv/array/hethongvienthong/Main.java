@@ -10,21 +10,22 @@ import java.util.Scanner;
 public class Main {
 	static char[][] arr;
 	static int M, N;
-	static int[][] directionsOfA = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-	static int[][] directionsOfB = {{-1, 0}, {-2, 0}, {1, 0}, {2, 0}, {0, -2}, {0, -1}, {0, 1}, {0, 2}};
-	static int[][] directionsOfC = {{-1, 0}, {-2, 0}, {-3, 0}, {1, 0}, {2, 0}, {3, 0}, {0, -3}, {0, -2}, {0, -1}, {0,
-			1}, {0, 2}, {0, 3}};
+	static HashMap<Character, int[][]> map = new HashMap<>();
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.setIn(new FileInputStream("D:\\code\\DSA\\src\\srv\\array\\hethongvienthong\\input.txt"));
 
+		map.put('A', new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}});
+		map.put('B', new int[][]{{-1, 0}, {-2, 0}, {1, 0}, {2, 0}, {0, -2}, {0, -1}, {0, 1}, {0, 2}});
+		map.put('C', new int[][]{{-1, 0}, {-2, 0}, {-3, 0}, {1, 0}, {2, 0}, {3, 0}, {0, -3}, {0, -2}, {0, -1}, {0,
+				1}, {0, 2}, {0, 3}});
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		for (int tc = 0; tc < T; tc++) {
 			M = sc.nextInt();
 			N = sc.nextInt();
 			sc.nextLine();
-			arr = new char[M][N];
+			arr = new char[100][100];
 			int count = 0;
 			for (int i = 0; i < M; i++) {
 				String line = sc.nextLine();
@@ -47,41 +48,20 @@ public class Main {
 					}
 				}
 			}
-			System.out.println(Arrays.deepToString(arr));
-
 			System.out.println("#" + (tc + 1) + " " + count);
 		}
 	}
 
 	static void checkBaoPhu(int x, int y) {
 		char ch = arr[x][y];
-		if (ch == 'A') {
-			for (int[] direction : directionsOfA) {
+		if (map.containsKey(ch)) {
+			for (int[] direction : map.get(ch)) {
 				if (x + direction[0] >= 0 && x + direction[0] < M && y + direction[1] >= 0 && y + direction[1] < N) {
-					if (arr[x + direction[0]][y + direction[1]] == 'B'){
-
+					if (!map.containsKey(arr[x + direction[0]][y + direction[1]])) {
+						arr[x + direction[0]][y + direction[1]] = 'X';
 					}
-
-					arr[x + direction[0]][y + direction[1]] = 'X';
-				}
-			}
-		} else if (ch == 'B') {
-			for (int[] direction : directionsOfB) {
-				if (x + direction[0] >= 0 && x + direction[0] < M && y + direction[1] >= 0 && y + direction[1] < N) {
-					arr[x + direction[0]][y + direction[1]] = 'X';
-				}
-			}
-		} else if (ch == 'C') {
-			for (int[] direction : directionsOfC) {
-				if (x + direction[0] >= 0 && x + direction[0] < M && y + direction[1] >= 0 && y + direction[1] < N) {
-					arr[x + direction[0]][y + direction[1]] = 'X';
 				}
 			}
 		}
 	}
-
-	static void checkBaoPhuOfChar(int[][] directionsOfChar, int x, int y){
-
-	}
-
 }
