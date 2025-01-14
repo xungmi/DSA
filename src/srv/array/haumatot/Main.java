@@ -10,15 +10,15 @@ public class Main {
 	static int[] posQ, posK, posP;
 
 	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("D:\\code\\DSA\\src\\srv\\array\\haumatot\\input.txt"));
+		System.setIn(new FileInputStream("E:\\DSA\\src\\srv\\array\\haumatot\\input.txt"));
 
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		for (int tc = 0; tc < T; tc++) {
 			M = sc.nextInt();
-			System.out.print("M" + M);
 			N = sc.nextInt();
-			System.out.print("N"+ N);
+			System.out.println("M: " + M);
+			System.out.println("N: "+ N);
 			break;
 //			String line = sc.nextLine();
 //			char[] posQ_ = line.toCharArray()
