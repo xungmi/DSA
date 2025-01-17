@@ -1,0 +1,31 @@
+- Cấu trúc dữ liệu là cách quản lý dữ liệu để có thể thao tác với dữ liệu 1 cách hiệu quả
+- Cấu trúc dữ liệu là thứ không thể thiếu để tạo ra được thuật toán tốt, giúp code dễ hiểu hơn
+- Abstract data type    ||     Implementation
+        List                       Dynamic array : ArrayList
+                                   Linked List
+        Queue                      Linked List based Queue
+                                   Array based queue
+                                   Stack based queue
+        Map                        HashMap
+                                   Hashtable
+                                   Tree Map
+- Thuật toán là gì? là hướng dẫn từng bước 1 để giải quyết vấn đề nào đó
+- Tại sao phải phân tích thuật toán? Chọn được giải pháp tốt nhất
+- BigO Notation: chỉ ra trường hợp tệ nhất của thuật toán
+
+Array
+- Static array: có n element cố định
+    - Tại sao phải sử dụng:
+        + lưu trữ, truy xuất chuỗi dữ liệu liên tục
+        + IO buffer
+        + search table
+- Phân tích độ phức tạp static array và dynamic array : access, search, insert, append
+
+ArrayList:
+    - ArrayList generic : đáp ứng cho các data type
+    - Có thể chuyển thành iterator
+    -
+    -
+
+
+
