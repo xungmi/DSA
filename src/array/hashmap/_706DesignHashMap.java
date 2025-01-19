@@ -1,4 +1,4 @@
-package array;
+package array.hashmap;
 
 /*
 Xây dựng 1 hashmap:
