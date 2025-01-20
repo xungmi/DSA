@@ -9,7 +9,8 @@
         Map                        HashMap
                                    Hashtable
                                    Tree Map
-- Thuật toán là gì? là hướng dẫn từng bước 1 để giải quyết vấn đề nào đó
+- Thuật toán là gì? là tập hữu hạn bước để giải quyết 1 lớp vấn đề nào đó
+            -   Tính chat: dừng, rõ ràng, có tính xác định
 - Tại sao phải phân tích thuật toán? Chọn được giải pháp tốt nhất
 - BigO Notation: chỉ ra trường hợp tệ nhất của thuật toán
 
