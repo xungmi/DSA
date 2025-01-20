@@ -126,3 +126,4 @@ public class DynamicArray<T> implements Iterable<T> {
         }
     }
 }
+//https://www.youtube.com/watch?v=MtSDY_kuM7o&list=PLoaAbmGPgTSNMAzkKBHkh2mLuBk54II5L&index=5
