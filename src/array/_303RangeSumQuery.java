@@ -2,17 +2,18 @@ package array;
 
 public class _303RangeSumQuery {
 	public static class NumArray {
-		private int[] nums;
+		private int[] prefixSum;
+		//goi it lan => tang cuong tinh toan o ham nay
 		public NumArray(int[] nums) {
-			this.nums = nums;
+			for (int i = 1; i < nums.length; i++){
+				nums[i] = nums[i] + nums[i-1];
+			}
+			prefixSum = nums;
 		}
 
+		//goi nhieu lan => Han che tinh toan o ham nay
 		public int sumRange(int left, int right) {
-			int sum = 0;
-			for (int i = left; i <= right; i++){
-				sum += nums[i];
-			}
-			return sum;
+			return left==0?prefixSum[right] : prefixSum[right]-prefixSum[left-1];
 		}
 	}
 
