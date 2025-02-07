@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class BFS_vohuong {
+public class BfsRecursive {
     static int n, m;
     static ArrayList<ArrayList<Integer>> adj;
     static boolean[] visited;
