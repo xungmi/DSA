@@ -1,4 +1,4 @@
-package sort.binarysearch;
+package search.binarysearch;
 
 public class Main {
     public static int binarySearch_Recursive(int[] arr, int left, int right, int k) {
