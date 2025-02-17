@@ -8,6 +8,13 @@ Gồm 3 bước:
         - tất cả mem lớn hơn pivot nằm bên phải
     3) đệ quy: áp dụng quick sort lên hai mảng con (bên trái và bên phải pivot)
 
+Quan trọng nhất là pivot quyết định độ phức tạp
+Xấu nhất: khi chọn pivot được chọn luôn là phần tử nhỏ nhất hoặc lớn nhất (tức mảng đã được sắp xếp)=> phần chia ko cân bằng
+            => số lần gọi đệ quy là On thay vì Ologn
+            Tổng số phép so sánh: O(n) + O(n-1) + ... + O(1) = O(n2)
+Tốt nhất: Onlogn. Mỗi lần chọn pivot thì chia mảng thành 2 phần n/2.
+    O(n) + 2O(n/2) + 4O(n/4) + ... + O(1) ~ O(n) + O(n/2) + O(n/4) + ... + O(1) = O(n+n/2+n/4+...+1) = O(n(1-(1/2)^logn))/(1-1/2)
+
  */
 public class Main {
 //    public static void quickSort(int[] arr, int low, int high) {
