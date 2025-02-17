@@ -1,17 +1,20 @@
-package bfs.vohuong;
+package dfs.undirected;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Stack;
 
-public class BfsRecursive {
-    static int n, m;
-    static ArrayList<ArrayList<Integer>> adj; //adjacent matrix
+public class Revise1 {
     static boolean[] visited;
+    static ArrayList<ArrayList<Integer>> adj;
+    static int n, m;
 
     static void inp() throws FileNotFoundException {
-        System.setIn(new FileInputStream("E:\\DSA\\src\\bfs\\vohuong\\input.txt"));
+        System.setIn(new FileInputStream("E:\\DSA\\src\\dfs\\undirected\\input.txt"));
         Scanner sc = new Scanner(System.in);
+
         n = sc.nextInt();
         m = sc.nextInt();
 
@@ -27,31 +30,29 @@ public class BfsRecursive {
             adj.get(x).add(y);
             adj.get(y).add(x);
         }
-        System.out.println(adj);
-        visited = new boolean[1001];// init full false
+        visited = new boolean[n+1];
     }
 
-    static void bfs(int u){
-        //buoc khoi tao
-        Queue<Integer> queue = new ArrayDeque<>();
-        queue.add(u);
+    static void dfs(int u){
+        Stack<Integer> stack = new Stack<>();
+        stack.push(u);
         visited[u] = true;
 
-        //duyet
-        while (!queue.isEmpty()){
-            int v = queue.poll();//lay dinh ra khoi hang doi va remove
-            System.out.print(v +", ");
-            //kiem tra cac dinh ke cua v
+        while (!stack.isEmpty()){
+            int v = stack.pop();
+            System.out.print(v + ", ");
+
             for (int x : adj.get(v)){
                 if (!visited[x]){
-                    queue.add(x);
                     visited[x] = true;
+                    stack.push(x);
                 }
             }
         }
     }
+
     public static void main(String[] args) throws FileNotFoundException {
         inp();
-        bfs(1);
+        dfs(1);
     }
 }
