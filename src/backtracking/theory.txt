@@ -1,0 +1,34 @@
+Quay lui:
++ Quay lui là kỹ thuật thử tất cả các khả năng để tìm ra lời giải đúng,
+	và quay lui lại nếu thấy lựa chọn hiện tại ko đạt kết quả hợp lệ
++ Tư duy:
+	- Xây dựng lời giải dần dần
+	- Tại mỗi bước, thử từng lựa chọn có thể
+	- Kiểm tra tính hợp lệ (nếu sai => quay lui
+	- Tiếp tục đệ quy cho đến khi tìm được lời giải hoàn chỉnh hoặc hết khả năng
+
++ Ứng dụng:
+	- Sudoku
+	- N-Queens (Đặt hậu)
+	- Tổ hợp, hoán vị, dãy con
+	- Word Search (tìm từ trong ma trận)
+	- Bài toán mê cung (Maze solving)
+	- Bài toán ba lô (0/1 knapsack – dạng thô)
+
+
+def backtrack(state):
+    if is_solution(state):
+        save_solution(state)
+        return
+
+    for choice in choices(state): 	  # Duyệt qua tất cả lựa chọn có thể tại trạng thái hiện tại
+        if is_valid(choice, state):   # Kiểm tra choice đối với state là hợp lệ ko
+            apply(choice, state)			#cập nhật state với choice
+            backtrack(state)				#đi sâu với state mới mà đã apply choice
+            undo(choice, state)  # quay lui	# gỡ bở choice khởi state để đưa về state ban đầu => thử choice mới
+
+backtrack là hàm đệ quy chính
+state là trạng thái hiện tại (có thể là danh sách, ma trận, tree,...)
+is_solution kiểm tra state hiện tại có phải đáp án ko
+save_solution : nếu là lời giải, lưu và return
+
