@@ -1,0 +1,65 @@
+[1,2,3,4]
+
+in ra tất cả hoán vị
+
+path = []
+used = [f,f,f,f]
+
+check path : 0 < 4
+	f1 : i = 0
+		used [t,f,f,f]
+		path = [1]
+		backtrack nums, path = [1], used = [t,f,f,f]
+			check path = 1 < 4
+				f2 : i = 0 => continue
+					 i = 1 => used = [t,t,f,f]
+					 path = [1,2]
+					 backtrack nums, path, used
+						f3 : i = 0
+							 i = 1
+							 i = 2 => used = [t,t,t,f]
+								path = 1,2,3
+								backtrack nums, path, used
+									f4: i = 0, 1, 2
+										i = 3 > used = [t,t,t,t]
+										path = 1,2,3,4
+										backtrack nums, path, used
+											path.length = nums.length
+											=> print and return
+										path.removelast => path = 1,2,3
+										used = [t,t,t,f]
+								path.rml => path = 1,2
+								used= t,t,f,f
+							 i = 3 
+								used = [t,t,f,t]
+								path = 1,2, 4
+								backtrack nums, path, used
+								1,2,4,3
+					i = 2
+						path = 1, 3
+						used t, f, t, f
+						backtrack
+							1,3,2,4
+							1,3, 4 2
+					i = 3
+						path 1, 4
+							1,4, 2, 3
+							1, 4, 3, 2
+							
+			i = 1
+				2, 1, 3, 4
+				2, 1, 4, 3
+				2, 3, 1, 4
+				2, 3, 4, 1
+				2, 4, 1, 3
+				2, 4, 3, 1
+				3, 1, 2, 4
+				3, 1, 4, 2
+				3, 
+						
+									
+							
+	1,2,3,4x
+	1,2,3,
+	1,2,4,3
+	1,2,3,
