@@ -19,6 +19,7 @@ chéo chính: trên trái xuống dui phải
 chéo phụ: trên phải xuống dưới trái
  */
 public class N_Queens {
+    static int count = 0;
     static boolean is_safe(int[] board, int row, int col){
         //kiểm tra tính hợp lệ của vị trí (row, col)
         for (int i=0; i < row; i++){
@@ -32,6 +33,7 @@ public class N_Queens {
     static void backtrack(int[] board, int row, int n){
         if (row == n){
             System.out.println(Arrays.toString(board));
+            count ++;
             return;
         }
 
@@ -46,10 +48,11 @@ public class N_Queens {
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 8;
         int[] board = new int[n];
         Arrays.fill(board, -1);
         backtrack(board, 0 , n);
+        System.out.println("Số nghiệm: " + count);
     }
 }
 
