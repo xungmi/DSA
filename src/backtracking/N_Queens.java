@@ -1,4 +1,4 @@
-package backtracking.hoanvi_tohop_daycon.nangcao1;
+package backtracking;
 
 import java.util.Arrays;
 

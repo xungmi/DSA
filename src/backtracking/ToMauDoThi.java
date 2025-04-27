@@ -1,4 +1,4 @@
-package backtracking.hoanvi_tohop_daycon.nangcao1;
+package backtracking;
 
 public class ToMauDoThi {
 /*

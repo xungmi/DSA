@@ -1,4 +1,4 @@
-package backtracking.hoanvi_tohop_daycon.nangcao1;
+package backtracking.hoanvi_tohop_dayco;
 
 //Tìm tất cả tổ hợp các số (không trùng lại) có tổng bằng K
 //Input: [2, 3, 6, 7], target = 7

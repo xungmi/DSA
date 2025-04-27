@@ -1,4 +1,4 @@
-package backtracking.hoanvi_tohop_daycon.basic;
+package backtracking.hoanvi_tohop_dayco;
 
 import java.util.ArrayList;
 import java.util.List;
