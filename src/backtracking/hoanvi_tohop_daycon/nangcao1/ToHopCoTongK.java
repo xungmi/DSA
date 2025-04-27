@@ -4,11 +4,31 @@ package backtracking.hoanvi_tohop_daycon.nangcao1;
 //Input: [2, 3, 6, 7], target = 7
 //Output: [2, 2, 3], [7]
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ToHopCoTongK {
-    static int sum = 7;
-    static void backtrack(int[] nums, List<Integer> sum){
-//        https://chatgpt.com/c/68007b7f-0258-8011-887d-b3c0553083d1
+    static int target = 7;
+    static int sum = 0;
+    static void backtrack(int[] nums, List<Integer> path, int start){
+        if (sum == target){
+            System.out.println(path);
+            return;
+        } else if (sum > target){
+            return;
+        }
+
+        for (int i = start; i < nums.length; i++){
+            path.add(nums[i]);
+            sum += nums[i];
+            backtrack(nums, path,i+1);
+            path.removeLast();
+            sum -= nums[i];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,2,3,4,5};
+        backtrack(nums, new ArrayList<>(), 0);
     }
 }
