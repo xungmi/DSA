@@ -1,6 +1,11 @@
 package sort.quicksort;
 
 /*
+Chọn 1 thằng làm chuẩn, chia đám còn lại thành nhóm nhỏ hơn và nhóm lớn hơn, rồi tiếp tục chia
+Giống: Bạn chọn 1 người làm chuẩn,
+       Ai thấp hơn đứng trái, ai cao hơn đứng phải
+       Tiếp tục chọn trong từng nhóm cho đến khi tất cả đều xếp đúng
+
 Gồm 3 bước:
     1) Chọn 1 phần tử làm pivot : có thể chọn ptu dau tien, o giua, cuoi cung hoac ngau nhiên
     2) Partitioning: sắp xếp các phần tử sao cho
@@ -10,34 +15,6 @@ Gồm 3 bước:
 
  */
 public class Main {
-//    public static void quickSort(int[] arr, int low, int high) {
-//        if (low < high) {
-//            int pivotInd = partition(arr, low, high);
-//            quickSort(arr, low, pivotInd - 1);
-//            quickSort(arr, pivotInd + 1, high);
-//        }
-//    }
-//
-//    private static int partition(int[] arr, int low, int high) {
-//        int pivot = arr[high];
-//        int i = low - 1;
-//
-//        for (int j = low; j < high; j++) {
-//            if (arr[j] < pivot) {
-//                 i++;
-//                int temp = arr[i];
-//                arr[i] = arr[j];
-//                arr[j] = temp;
-//            }
-//        }
-//
-//        int temp = arr[i + 1];
-//        arr[i + 1] = arr[high];
-//        arr[high] = temp;
-//
-//        return i + 1;
-//    }
-
     public static void main(String[] args) {
         int[] arr = {10, 80, 30, 90, 40, 50, 70};
         quickSort(arr, 0, arr.length - 1);
@@ -66,6 +43,9 @@ public class Main {
             }
         }
 
+        //arr[high] dang chua pivot
+        //i là chỉ số vị trí cuối cùng mà các phần tử <= pivot đã được xếp.
+        
         int temp = arr[i+1];
         arr[i+1] = pivot;
         arr[high] = temp;

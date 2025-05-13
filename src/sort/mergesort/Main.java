@@ -3,6 +3,14 @@ package sort.mergesort;
 import java.util.Arrays;
 
 /*
+Hình dung doi thuong:
+    Giả sử bạn có 1 đống quần áo hỗn độn (áo thun, quần, vớ... đủ kiểu lung tung).
+    Bạn muốn xếp gọn chúng.
+    Cach lam:
+        Chia nhỏ
+        Xử lý từng phần tử
+        Ghép lại
+
 Chia mảng thành các phần nhỏ hơn
 Sắp xếp từng phần
 Kết hợp các phần tử đã sắp xếp lại thành mảng hoàn chỉnh

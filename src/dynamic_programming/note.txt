@@ -1,0 +1,25 @@
+Thuật toán Quy hoạch động là bước tiếp theo rất tự nhiên sau Backtracking
+Kỹ thuật "Memoization" là cầu nối giữa Backtracking và DP.
+
+DP là một kỹ thuật lập trình dùng để tối ưu hóa bài toán có tính chất lặp lại bằng cách:
+    1. Chia nhỏ bài toán lớn thành những bài toán con
+    2. Lưu lại kết quả của các bài toán con đã giải
+    3. Tái sử dụng kết quả đó thay vì tính lại (tiết kiệm thời gian).
+
+So sánh với Backtracking:
+    Backtracking: duyệt tất cả trường hợp.
+    DP: chỉ duyệt những trường hợp khác biệt, và tránh lặp lại nhờ memoization hoặc bottom-up.
+
+Khi nào dùng DP?
+    Tính chất con : Bài toán lớn có thể giải bằng cách kết hợp các bài toán nhỏ hơn.
+    Tính chồng chéo : Có nhiều bài toán con giống nhau lặp đi lặp lại.
+
+2 kỹ thuật chính trong DP:
+    1. Top-down (Memoization) – gần với Backtracking
+        Dùng đệ quy + mảng nhớ (memo)
+    2. Bottom-up (Tabulation) – viết từ dưới lên
+        Duyệt theo thứ tự tăng dần, lưu kết quả trong bảng
+
+Các dạng bài DP phổ biến
+    Dãy số, Chuỗi, Phân tích số, Balo (Knapsack), Game/Trò chơi, DP trên đồ thị
+

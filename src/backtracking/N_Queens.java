@@ -30,6 +30,7 @@ public class N_Queens {
         }
         return true;
     }
+
     static void backtrack(int[] board, int row, int n){
         if (row == n){
             System.out.println(Arrays.toString(board));
