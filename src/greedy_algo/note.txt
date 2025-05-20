@@ -1,0 +1,9 @@
+MỤC TIÊU:
+    - Hiểu được nguyên lý hoạt động của thuật toán tham lam
+    - Nhận diện được bài toán có thể giải bằng tham lam
+    - Biết cách chứng minh tính đúng đắn
+    - Thành thạo các dạng bài tham lam phổ biến
+Lý thuyết cơ bản
+    - Nguyên lý của thuật toán tham lam: chọn phương án tốt nhất cục bộ
+    - Khi nào tham lam là đúng? → Tính chất cấu trúc con tối ưu và lựa chọn tham lam
+    - So sánh với Quy hoạch động
